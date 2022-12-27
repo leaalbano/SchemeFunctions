@@ -1,0 +1,14 @@
+; Define rotate-R, which is just like rotate-L except
+; that it rotates in the other direction.
+;		(rotate-R ‘(a b c)) returns ‘(c a b)
+
+#lang racket
+(define (rotate-R l)
+  (let ((lst (reverse l)))
+    (cons (car lst) (reverse (cdr lst)))))
+
+    ;;; Test the function:
+    (rotate-R '(a))
+    (rotate-R '(a b))
+    (rotate-R '(a b c))
+    (rotate-R '(a b c d))

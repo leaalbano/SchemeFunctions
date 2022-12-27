@@ -1,0 +1,17 @@
+; Define palindromize that takes a list of arguments and returns a list that is
+; twice as long and reads the same forwards and backwards.
+; (palindromize ‘(a b c)) returns ‘(a b c c b a)
+
+#lang racket
+(define (reverse lst) ; had to define reverse function, it didn't work in online compiler
+    (if (null? lst)
+        '()
+        (append (reverse (cdr lst)) (list (car lst)) )
+    )
+)
+(define palindromize
+  (lambda (lst)
+    (append lst (reverse lst))))
+
+(display "(palindromize '(1 2 3)) = ")
+(display (palindromize '(1 2 3)))

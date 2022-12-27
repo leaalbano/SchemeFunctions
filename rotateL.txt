@@ -1,0 +1,17 @@
+;Define rotate-L, a function that takes a list as its argument and returns a new
+;list in which the former first element becomes the last. For example
+;(rotate-L ‘(a b c)) returns ‘(b c a)
+
+#lang racket
+(define rotate-L
+  (lambda (lst)
+    (if (null? lst)
+	'()
+	(append (cdr lst) (list (car lst))))))
+
+;;; Test the function:
+(rotate-L '())
+(rotate-L '(a))
+(rotate-L '(a b))
+(rotate-L '(a b c))
+(rotate-L '(a b c d))

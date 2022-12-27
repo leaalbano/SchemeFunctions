@@ -1,0 +1,11 @@
+;Define the sum function that takes two numbers and returns the sum of the numbers.
+
+#lang racket
+;;Sum Function
+(define sum
+  (lambda (arg1 arg2)
+    (+ arg1 arg2)))
+
+;; Test the Sum Function
+(display "(sum 1 2) = ")
+(display (sum 1 2))

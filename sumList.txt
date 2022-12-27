@@ -1,0 +1,18 @@
+; Define the sumList function that takes a list of numbers and returns the sum of them.
+; If the list is empty, return 0.
+
+#lang racket
+(define sumList
+  (lambda (lst)
+    (if (null? lst) ; checks if lst is empty
+	0
+	(let ((a (car lst))) ;sets variable "a" to first value of lst using car function
+	  (cond
+	   ((number? a) (+ a (sumList (cdr lst)))) ; checks if variable "a" contains a number value
+                                             ; if it's a number, then add current value of "a" using
+                                             ; sumList and iterate through whole lst using cdr function
+	   (else (error 'sumList "Non-number argument" a))))))) ;  if a != number then give error message
+
+;; Testing the sumList function
+(display "(sumList '(1 2 3)) = ")
+(display (sumList '(1 2 3)))
